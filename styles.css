@@ -322,3 +322,29 @@ box-shadow:
 inset 0 1px 1px rgba(255,255,255,.4);
 
 }
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+main{
+
+animation:fadeIn .8s ease;
+
+}
