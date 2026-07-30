@@ -117,3 +117,13 @@ label {
     margin-top: 15px;
     font-weight: bold;
 }
+
+input,
+select,
+textarea {
+    margin-top: 8px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
