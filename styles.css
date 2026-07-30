@@ -131,3 +131,20 @@ textarea {
 textarea {
     resize: vertical;
 }
+
+.buttons {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: #0d6efd;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
