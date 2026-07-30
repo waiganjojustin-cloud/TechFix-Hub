@@ -79,6 +79,7 @@ main {
     gap: 20px;
     justify-content: space-between;
     margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 .card {
@@ -290,5 +291,34 @@ footer {
         display: block;
         overflow-x: auto;
     }
+
+}
+
+.hero,
+.card,
+.about,
+.form-container,
+.dashboard{
+
+transition:
+
+transform .4s ease,
+
+box-shadow .4s ease;
+
+}
+
+.hero:hover,
+.about:hover,
+.form-container:hover,
+.dashboard:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+
+0 20px 45px rgba(0,0,0,.3),
+
+inset 0 1px 1px rgba(255,255,255,.4);
 
 }
