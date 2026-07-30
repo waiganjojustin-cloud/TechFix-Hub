@@ -204,3 +204,11 @@ table tr:nth-child(even) {
 table tr:hover {
     background: #e9ecef;
 }
+
+footer {
+    text-align: center;
+    background: #0d6efd;
+    color: white;
+    padding: 15px;
+    margin-top: 40px;
+}
