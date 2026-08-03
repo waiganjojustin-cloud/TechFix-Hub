@@ -170,9 +170,13 @@ textarea {
     outline:none;
 }
 
+select {
+    cursor: pointer;
+    font-weight: bold;
+}
+
 input::placeholder,
 textarea::placeholder{
-
     color:rgba(255,255,255,.8);
 
 }
