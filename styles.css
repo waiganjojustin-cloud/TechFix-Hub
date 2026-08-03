@@ -51,8 +51,18 @@ header h1 {
 
 }
 
+.menu-btn:hover{
+
+    background:rgba(30,60,114,.7);
+    transform:scale(1.05);
+
+}
+
 nav {
     margin-top: 10px;
+    display:flex;
+    gap:15px;
+    align-items:center;
 
 }
 
@@ -463,6 +473,12 @@ footer {
         text-align:center;
 
     }
+    .menu-btn{
+
+        display:block;
+
+    }
+
 
     .info-section{
 
@@ -470,11 +486,31 @@ footer {
 
 }
 
+ nav{
+
+        display:none;
+
+        flex-direction:column;
+
+        width:100%;
+
+        margin-top:20px;
+
+        gap:15px;
+
+    }
+
 nav a{
 
-        min-width: 170px;
+        min-width: 100%;
 
         text-align: center;
+
+    }
+
+    nav.show{
+
+        display:flex;
 
     }
 
