@@ -454,6 +454,14 @@ table tr:hover {
     background: #516b86;
 }
 
+#mpesaSection{
+    display:none;
+}
+
+#mpesaSection{
+    display: none;
+}
+
 footer {
     text-align: center;
     background:rgba(255,255,255,.12);

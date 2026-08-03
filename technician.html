@@ -11,7 +11,6 @@
 
         <h1>📱 TechFix Hub</h1>
 
-        <!-- Navigation Menu -->
         <nav>
 
             <a href="index.html">Home</a>
@@ -26,7 +25,6 @@
 
     <main>
 
-        <!-- Technician Dashboard -->
         <section class="dashboard">
 
             <h2>Technician Dashboard</h2>
@@ -35,7 +33,11 @@
                 View all repair requests, update their status, or remove completed repairs.
             </p>
 
-            <!-- Repair Requests Table -->
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="🔍 Search customer or device...">
+            
+            </div>
+
             <table id="repairTable">
 
                 <thead>
@@ -53,6 +55,10 @@
                         <th>Problem</th>
 
                         <th>Status</th>
+
+                        <th>Payment</th>
+
+                        <th>M-Pesa No.</th>
 
                         <th>Actions</th>
 
