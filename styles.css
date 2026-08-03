@@ -22,7 +22,7 @@ header {
     -webkit-backdrop-filter: blur(18px);
     border-bottom:1px solid rgba(255,255,255,0.2);
     color:white;
-    flex-direction: raw;
+    flex-direction: row;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -67,7 +67,7 @@ nav {
 }
 
 nav a{
-
+    position: relative;
     display: inline-block;
     text-decoration: none;
     color: white;
@@ -84,13 +84,12 @@ nav a{
 }
 
 nav a.active{
-    nav a.active{
     color: #ffffff;
     background: rgba(13,110,253,.8);
     border-color: rgba(255,255,255,.6);
 
 }
-}
+
 
 nav a:hover {
     background:rgba(255,255,255,.2);
@@ -176,7 +175,7 @@ main {
     border:1px solid rgba(255,255,255,0.25);
     border-radius:20px;
     box-shadow:
-    0 8px 32px rgba(0,0,0,.2)
+    0 8px 32px rgba(0,0,0,.2),
     inset 0 1px 1px rgba(255,255,255,.4);
     color:white;
     padding:25px;
