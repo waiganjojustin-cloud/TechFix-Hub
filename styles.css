@@ -22,11 +22,13 @@ header {
     -webkit-backdrop-filter: blur(18px);
     border-bottom:1px solid rgba(255,255,255,0.2);
     color:white;
+    flex-direction: raw;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     padding:20px;
+    gap: 20px;
 }
 
 header h1 {
@@ -35,6 +37,7 @@ header h1 {
 
 nav {
     margin-top: 10px;
+
 }
 
 nav a{
@@ -55,17 +58,12 @@ nav a{
 }
 
 nav a.active{
-
-    text-decoration: underline;
-
-    text-decoration-thickness: 3px;
-
-    text-underline-offset: 8px;
-
+    nav a.active{
     color: #ffffff;
+    background: rgba(13,110,253,.8);
+    border-color: rgba(255,255,255,.6);
 
-    font-weight: bold;
-
+}
 }
 
 nav a:hover {
@@ -78,19 +76,12 @@ nav a:hover {
 nav a::after{
 
     content: "";
-
     position: absolute;
-
     left: 18px;
-
     bottom: 5px;
-
     width: 0;
-
     height: 2px;
-
     background: white;
-
     transition: .3s;
 
 }
@@ -462,6 +453,14 @@ footer {
     flex-direction:column;
 
 }
+
+nav a{
+
+        min-width: 170px;
+
+        text-align: center;
+
+    }
 
     .stats {
         flex-direction: column;
