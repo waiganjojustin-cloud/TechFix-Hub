@@ -33,38 +33,38 @@
                 View all repair requests, update their status, or remove completed repairs.
             </p>
 
+            <section class="dashboard-cards">
+                
+                <div class="card">
+                    
+                    <h3>Total Repairs</h3>
+                    
+                    <p id="totalRepairs">0</p>
+                
+                </div>
+                
+                <div class="card">
+                    
+                    <h3>Pending</h3>
+                    
+                    <p id="pendingRepairs">0</p>
+                
+                </div>
+                
+                <div class="card">
+                    
+                    <h3>Completed</h3>
+                    
+                    <p id="completedRepairs">0</p>
+                
+                </div>
+            
+            </section>
+            
             <div class="search-box">
                 <input type="text" id="searchInput" placeholder="🔍 Search customer or device...">
             
             </div>
-
-            <section class="dashboard-cards">
-
-    <div class="card">
-
-        <h3>Total Repairs</h3>
-
-        <p id="totalRepairs">0</p>
-
-    </div>
-
-    <div class="card">
-
-        <h3>Pending</h3>
-
-        <p id="pendingRepairs">0</p>
-
-    </div>
-
-    <div class="card">
-
-        <h3>Completed</h3>
-
-        <p id="completedRepairs">0</p>
-
-    </div>
-
-</section>
 
             <table id="repairTable">
 
@@ -94,7 +94,6 @@
 
                 </thead>
 
-                <!-- JavaScript will insert repair records here -->
                 <tbody id="repairList">
 
                 </tbody>
