@@ -46,6 +46,20 @@ nav a {
     transition:.3s;
 }
 
+nav a.active{
+
+    text-decoration: underline;
+
+    text-decoration-thickness: 3px;
+
+    text-underline-offset: 8px;
+
+    color: #ffffff;
+
+    font-weight: bold;
+
+}
+
 nav a:hover {
     background:rgba(255,255,255,.2);
 }
@@ -65,6 +79,7 @@ nav a:hover {
     box-shadow:0 8px 20px rgba(0,0,0,.2);
 
 }
+
 
 main {
     width: 90%;
