@@ -54,3 +54,27 @@ function loadRepairs() {
     });
 
 }
+
+function completeRepair(id) {
+
+    let repairs = JSON.parse(localStorage.getItem("repairs")) || [];
+
+    repairs = repairs.map(function (repair) {
+
+        if (repair.id === id) {
+
+            repair.status = "Completed";
+
+        }
+
+        return repair;
+
+    });
+
+    localStorage.setItem("repairs", JSON.stringify(repairs));
+
+    loadRepairs();
+
+}
+
+
