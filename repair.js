@@ -33,3 +33,25 @@ repairForm.addEventListener("submit", function (event) {
     const status = document.getElementById("status").value;
     const payment = paymentMethod.value;
     const paymentNumber = document.getElementById("paymentNumber").value.trim();
+
+    if (
+        customerName === "" ||
+        phoneNumber === "" ||
+        deviceType === "" ||
+        problem === "" ||
+        payment === ""
+    ) {
+
+        alert("Please fill in all required fields.");
+
+        return;
+
+    }
+
+    if (payment === "M-Pesa" && paymentNumber === "") {
+
+        alert("Please enter the M-Pesa phone number.");
+
+        return;
+
+    }
