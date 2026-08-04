@@ -55,3 +55,23 @@ repairForm.addEventListener("submit", function (event) {
         return;
 
     }
+
+    const repair = {
+
+        id: Date.now(),
+
+        customerName: customerName,
+
+        phoneNumber: phoneNumber,
+
+        deviceType: deviceType,
+
+        problem: problem,
+
+        status: status,
+
+        paymentMethod: payment,
+
+        paymentNumber: paymentNumber
+
+    };
