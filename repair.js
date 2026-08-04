@@ -25,3 +25,11 @@ if (paymentMethod) {
 repairForm.addEventListener("submit", function (event) {
 
     event.preventDefault();
+
+    const customerName = document.getElementById("customerName").value.trim();
+    const phoneNumber = document.getElementById("phoneNumber").value.trim();
+    const deviceType = document.getElementById("deviceType").value;
+    const problem = document.getElementById("problem").value.trim();
+    const status = document.getElementById("status").value;
+    const payment = paymentMethod.value;
+    const paymentNumber = document.getElementById("paymentNumber").value.trim();
