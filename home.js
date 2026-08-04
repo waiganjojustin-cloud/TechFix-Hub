@@ -22,3 +22,5 @@ if (menuBtn && navbar) {
     });
 
 }
+
+const clock = document.getElementById("clock");
