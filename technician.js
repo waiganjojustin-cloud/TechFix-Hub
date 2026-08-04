@@ -77,4 +77,22 @@ function completeRepair(id) {
 
 }
 
+function deleteRepair(id) {
 
+    const confirmDelete = confirm("Delete this repair request?");
+
+    if (!confirmDelete) return;
+
+    let repairs = JSON.parse(localStorage.getItem("repairs")) || [];
+
+    repairs = repairs.filter(function (repair) {
+
+        return repair.id !== id;
+
+    });
+
+    localStorage.setItem("repairs", JSON.stringify(repairs));
+
+    loadRepairs();
+
+}
