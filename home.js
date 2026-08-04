@@ -7,11 +7,11 @@ if (menuBtn && navbar) {
 
         navbar.classList.toggle("show");
 
- });        
+    });
 
- const navLinks = navbar.querySelectorAll("a");
+    const links = navbar.querySelectorAll("a");
 
-    navLinks.forEach(function (link) {
+    links.forEach(function (link) {
 
         link.addEventListener("click", function () {
 
@@ -24,6 +24,7 @@ if (menuBtn && navbar) {
 }
 
 const clock = document.getElementById("clock");
+
 function updateClock() {
 
     if (!clock) return;
@@ -55,11 +56,6 @@ function updateClock() {
         "December"
     ];
 
-    const dayName = days[now.getDay()];
-    const day = now.getDate();
-    const month = months[now.getMonth()];
-    const year = now.getFullYear();
-
     let hours = now.getHours();
     let minutes = now.getMinutes();
     let seconds = now.getSeconds();
@@ -69,65 +65,15 @@ function updateClock() {
     if (seconds < 10) seconds = "0" + seconds;
 
     clock.innerHTML = `
-        ${dayName}<br>
-        ${day} ${month} ${year}<br>
+        ${days[now.getDay()]}<br>
+        ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}<br>
         ${hours}:${minutes}:${seconds}
     `;
 
 }
+
 updateClock();
+
 setInterval(updateClock, 1000);
-
-const cards = document.querySelectorAll(".card");
-
-cards.forEach(function (card, index) {
-
-    card.style.opacity = "0";
-    card.style.transform = "translateY(30px)";
-
-    setTimeout(function () {
-
-        card.style.transition = "0.6s ease";
-        card.style.opacity = "1";
-        card.style.transform = "translateY(0)";
-
-    }, index * 200);
-
-});
-
-
-const infoCards = document.querySelectorAll(".info-card");
-
-infoCards.forEach(function (card, index) {
-
-    card.style.opacity = "0";
-    card.style.transform = "translateY(30px)";
-
-    setTimeout(function () {
-
-        card.style.transition = "0.6s ease";
-        card.style.opacity = "1";
-        card.style.transform = "translateY(0)";
-
-    }, 600 + (index * 250));
-
-});
-
-const hero = document.querySelector(".hero");
-
-if (hero) {
-
-    hero.style.opacity = "0";
-    hero.style.transform = "translateY(20px)";
-
-    setTimeout(function () {
-
-        hero.style.transition = "0.8s ease";
-        hero.style.opacity = "1";
-        hero.style.transform = "translateY(0)";
-
-    }, 100);
-
-}
 
 console.log("TechFix Hub Home Loaded Successfully.");
