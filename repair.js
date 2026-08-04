@@ -21,3 +21,7 @@ if (paymentMethod) {
     });
 
 }
+
+repairForm.addEventListener("submit", function (event) {
+
+    event.preventDefault();
