@@ -75,3 +75,18 @@ repairForm.addEventListener("submit", function (event) {
         paymentNumber: paymentNumber
 
     };
+
+let repairs = JSON.parse(localStorage.getItem("repairs")) || [];
+
+repairs.push(repair);
+
+ localStorage.setItem("repairs", JSON.stringify(repairs));
+
+ alert("Repair request saved successfully!");
+
+ repairForm.reset();
+
+  mpesaSection.style.display = "none";
+  });
+
+console.log("Repair page loaded successfully.");
