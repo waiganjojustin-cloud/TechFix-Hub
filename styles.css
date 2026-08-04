@@ -499,6 +499,22 @@ table tr:hover{
     display:none;
 }
 
+.dashboard button{
+    margin:3px;
+    padding:8px 14px;
+    border-radius:10px;
+}
+
+.dashboard button:first-child{
+    background:#198754;
+    color:white;
+}
+
+.dashboard button:last-child{
+    background:#dc3545;
+    color:white;
+}
+
 footer {
     text-align: center;
     background:rgba(255,255,255,.12);

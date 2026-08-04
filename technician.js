@@ -31,21 +31,19 @@ function loadRepairs() {
                 <td>${repair.deviceType}</td>
 
                 <td>${repair.problem}</td>
-
-                <td>${repair.paymentMethod}</td>
-
+                
                 <td>${repair.status}</td>
-
+                
+                <td>${repair.paymentMethod}</td>
+                
+                <td>${repair.paymentNumber || "-"}</td>
+                
                 <td>
-
-                    <button onclick="completeRepair(${repair.id})">
-                        Complete
-                    </button>
-
-                    <button onclick="deleteRepair(${repair.id})">
-                        Delete
-                    </button>
-
+                
+                <button onclick="completeRepair(${repair.id})">Complete</button>
+                
+                <button onclick="deleteRepair(${repair.id})">Delete</button>
+                
                 </td>
 
             </tr>
