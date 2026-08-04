@@ -112,3 +112,22 @@ infoCards.forEach(function (card, index) {
     }, 600 + (index * 250));
 
 });
+
+const hero = document.querySelector(".hero");
+
+if (hero) {
+
+    hero.style.opacity = "0";
+    hero.style.transform = "translateY(20px)";
+
+    setTimeout(function () {
+
+        hero.style.transition = "0.8s ease";
+        hero.style.opacity = "1";
+        hero.style.transform = "translateY(0)";
+
+    }, 100);
+
+}
+
+console.log("TechFix Hub Home Loaded Successfully.");
