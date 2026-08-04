@@ -94,3 +94,21 @@ cards.forEach(function (card, index) {
     }, index * 200);
 
 });
+
+
+const infoCards = document.querySelectorAll(".info-card");
+
+infoCards.forEach(function (card, index) {
+
+    card.style.opacity = "0";
+    card.style.transform = "translateY(30px)";
+
+    setTimeout(function () {
+
+        card.style.transition = "0.6s ease";
+        card.style.opacity = "1";
+        card.style.transform = "translateY(0)";
+
+    }, 600 + (index * 250));
+
+});
