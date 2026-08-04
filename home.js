@@ -8,3 +8,17 @@ if (menuBtn && navbar) {
         navbar.classList.toggle("show");
 
  });        
+
+ const navLinks = navbar.querySelectorAll("a");
+
+    navLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            navbar.classList.remove("show");
+
+        });
+
+    });
+
+}
