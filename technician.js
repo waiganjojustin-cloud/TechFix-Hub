@@ -96,3 +96,7 @@ function deleteRepair(id) {
     loadRepairs();
 
 }
+
+loadRepairs();
+
+console.log("Technician Portal Loaded Successfully.");
