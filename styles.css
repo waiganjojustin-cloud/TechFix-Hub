@@ -144,6 +144,7 @@ main {
     width: 90%;
     max-width: 1100px;
     margin: 30px auto;
+
 }
 
 .hero {
@@ -170,6 +171,7 @@ main {
     justify-content: space-between;
     margin-bottom: 30px;
     margin-top: 30px;
+    padding-top: 15px;
 }
 
 .card {
@@ -211,6 +213,7 @@ main {
     color:rgba(255,255,255,.9);
     text-shadow:none;
     margin-top:12px;
+    overflow: hidden;
 }
 
 .about {
@@ -459,9 +462,65 @@ button[type="reset"] {
 }
 
 .search-box input::placeholder{
-
     color:rgba(255,255,255,.8);
+}
 
+.status{
+    padding:8px 14px;
+    border-radius:20px;
+    font-weight:bold;
+    display:inline-block;
+    min-width:95px;
+}
+
+.pending{
+    background:#ffc107;
+    color:#222;
+}
+
+.completed{
+    background:#198754;
+    color:white;
+}
+
+.table-container{
+    overflow-x:auto;
+}
+
+.status{
+    display:inline-block;
+    padding:7px 15px;
+    border-radius:20px;
+    font-weight:bold;
+    min-width:95px;
+}
+
+.pending{
+    background:#ffc107;
+    color:#222;
+}
+
+.completed{
+    background:#198754;
+    color:white;
+}
+
+.complete-btn{
+    background:#198754;
+    color:white;
+}
+
+.complete-btn:hover{
+    background:#157347;
+}
+
+.delete-btn{
+    background:#dc3545;
+    color:white;
+}
+
+.delete-btn:hover{
+    background:#bb2d3b;
 }
 
 table {

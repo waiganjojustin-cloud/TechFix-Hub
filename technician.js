@@ -1,99 +1,187 @@
 const repairList = document.getElementById("repairList");
+const searchInput = document.getElementById("searchInput");
 
-function loadRepairs() {
+function getRepairs() {
 
-    const repairs = JSON.parse(localStorage.getItem("repairs")) || [];
+    return JSON.parse(localStorage.getItem("repairs")) || [];
+
+}
+
+function saveRepairs(repairs) {
+
+    localStorage.setItem("repairs", JSON.stringify(repairs));
+
+}
+
+function updateDashboard(repairs) {
+
+    document.getElementById("totalRepairs").textContent = repairs.length;
+
+    const pending = repairs.filter(function(repair){
+
+        return repair.status === "Pending";
+
+    }).length;
+
+    const completed = repairs.filter(function(repair){
+
+        return repair.status === "Completed";
+
+    }).length;
+
+    document.getElementById("pendingRepairs").textContent = pending;
+
+    document.getElementById("completedRepairs").textContent = completed;
+
+}
+
+function loadRepairs(searchText = "") {
+
+    const repairs = getRepairs();
+
+    updateDashboard(repairs);
 
     repairList.innerHTML = "";
 
-    if (repairs.length === 0) {
+    const filteredRepairs = repairs.filter(function(repair){
+
+        return (
+
+            repair.customerName.toLowerCase().includes(searchText.toLowerCase()) ||
+
+            repair.phoneNumber.includes(searchText) ||
+
+            repair.deviceType.toLowerCase().includes(searchText.toLowerCase())
+
+        );
+
+    });
+
+    if(filteredRepairs.length === 0){
 
         repairList.innerHTML = `
-            <tr>
-                <td colspan="8">No repair requests found.</td>
-            </tr>
+
+        <tr>
+
+            <td colspan="9">
+
+                📭 No repair requests found.
+
+            </td>
+
+        </tr>
+
         `;
 
         return;
+
     }
 
-    repairs.forEach(function (repair, index) {
+    filteredRepairs.forEach(function(repair,index){
 
         repairList.innerHTML += `
-            <tr>
 
-                <td>${index + 1}</td>
+        <tr>
 
-                <td>${repair.customerName}</td>
+            <td>${index + 1}</td>
 
-                <td>${repair.phoneNumber}</td>
+            <td>${repair.customerName}</td>
 
-                <td>${repair.deviceType}</td>
+            <td>${repair.phoneNumber}</td>
 
-                <td>${repair.problem}</td>
-                
-                <td>${repair.status}</td>
-                
-                <td>${repair.paymentMethod}</td>
-                
-                <td>${repair.paymentNumber || "-"}</td>
-                
-                <td>
-                
-                <button onclick="completeRepair(${repair.id})">Complete</button>
-                
-                <button onclick="deleteRepair(${repair.id})">Delete</button>
-                
-                </td>
+            <td>${repair.deviceType}</td>
 
-            </tr>
+            <td>${repair.problem}</td>
+
+            <td>
+
+                <span class="status ${repair.status.toLowerCase()}">
+
+                    ${repair.status}
+
+                </span>
+
+            </td>
+
+            <td>${repair.paymentMethod}</td>
+
+            <td>${repair.paymentNumber || "-"}</td>
+
+            <td>
+
+                <button class="complete-btn"
+
+                onclick="completeRepair(${repair.id})">
+
+                ✔
+
+                </button>
+
+                <button class="delete-btn"
+
+                onclick="deleteRepair(${repair.id})">
+
+                🗑
+
+                </button>
+
+            </td>
+
+        </tr>
+
         `;
 
     });
 
 }
 
-function completeRepair(id) {
+function completeRepair(id){
 
-    let repairs = JSON.parse(localStorage.getItem("repairs")) || [];
+    const repairs = getRepairs();
 
-    repairs = repairs.map(function (repair) {
+    const repair = repairs.find(function(item){
 
-        if (repair.id === id) {
-
-            repair.status = "Completed";
-
-        }
-
-        return repair;
+        return item.id === id;
 
     });
 
-    localStorage.setItem("repairs", JSON.stringify(repairs));
+    if(repair){
 
-    loadRepairs();
+        repair.status = "Completed";
+
+    }
+
+    saveRepairs(repairs);
+
+    loadRepairs(searchInput.value);
 
 }
 
-function deleteRepair(id) {
+function deleteRepair(id){
 
-    const confirmDelete = confirm("Delete this repair request?");
+    if(!confirm("Delete this repair request?")){
 
-    if (!confirmDelete) return;
+        return;
 
-    let repairs = JSON.parse(localStorage.getItem("repairs")) || [];
+    }
 
-    repairs = repairs.filter(function (repair) {
+    const repairs = getRepairs().filter(function(item){
 
-        return repair.id !== id;
+        return item.id !== id;
 
     });
 
-    localStorage.setItem("repairs", JSON.stringify(repairs));
+    saveRepairs(repairs);
 
-    loadRepairs();
+    loadRepairs(searchInput.value);
 
 }
+
+searchInput.addEventListener("input", function(){
+
+    loadRepairs(searchInput.value);
+
+});
 
 loadRepairs();
 
