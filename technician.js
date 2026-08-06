@@ -1,3 +1,9 @@
+if (sessionStorage.getItem("loggedIn") !== "true") {
+
+    window.location.href = "login.html";
+
+}
+
 const repairList = document.getElementById("repairList");
 const searchInput = document.getElementById("searchInput");
 
@@ -186,3 +192,16 @@ searchInput.addEventListener("input", function(){
 loadRepairs();
 
 console.log("Technician Portal Loaded Successfully.");
+
+const logoutBtn = document.getElementById("logoutBtn");
+
+if (logoutBtn) {
+
+    logoutBtn.addEventListener("click", function () {
+        sessionStorage.removeItem("loggedIn");
+
+        window.location.href = "login.html";
+
+    });
+
+}
