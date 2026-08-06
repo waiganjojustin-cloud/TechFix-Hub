@@ -1,65 +1,144 @@
 <!DOCTYPE html>
+<!-- Defines that the document uses HTML5 -->
+
 <html lang="en">
+
 <head>
+
+    <!-- Sets the character encoding of the webpage -->
     <meta charset="UTF-8">
+
+    <!-- Makes the page responsive on phones, tablets, and computers -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Text displayed on the browser tab -->
     <title>TechFix Hub | Technician Login</title>
+
+    <!-- Connects the page with the CSS styling file -->
     <link rel="stylesheet" href="./styles.css">
+
 </head>
+
 
 <body>
 
+
+<!-- Website header section -->
 <header>
+
+
+    <!-- Website name/logo -->
     <h1>📱 TechFix Hub</h1>
 
+
+    <!-- Navigation links -->
     <nav>
+
+        <!-- Link back to homepage -->
         <a href="index.html">Home</a>
+
+
+        <!-- Link to customer repair request page -->
         <a href="repair.html">Add Repair</a>
+
+
     </nav>
+
+
 </header>
 
+
+
+<!-- Main login area -->
 <main class="login-page">
 
+
+    <!-- Login card container -->
     <div class="login-card">
 
+
+        <!-- Login page heading -->
         <h2>🔒 Technician Login</h2>
 
+
+        <!-- Instructions for the technician -->
         <p>Please sign in to access the Technician Portal.</p>
 
+
+
+        <!-- Login form -->
         <form id="loginForm">
 
+
+            <!-- Username input field -->
             <input
                 type="text"
                 id="username"
                 placeholder="Username"
                 required
             >
-            
+
+
+
+            <!-- Password input section -->
             <div class="password-box">
-                
-                <input type="password" id="password" placeholder="Password" required>
-                
+
+
+                <!-- Password input field -->
+                <input 
+                    type="password" 
+                    id="password" 
+                    placeholder="Password" 
+                    required
+                >
+
+
+                <!-- Icon used to show or hide password -->
                 <span id="togglePassword">👁️</span>
-            
+
+
             </div>
 
+
+
+            <!-- Button to submit login details -->
             <button type="submit">
                 Login
             </button>
 
+
+
+            <!-- Displays login success or error messages -->
             <p id="message"></p>
+
+
 
         </form>
 
+
     </div>
+
 
 </main>
 
+
+
+<!-- Footer section -->
 <footer>
+
+
     <p>&copy; 2026 TechFix Hub</p>
+
+
 </footer>
 
+
+
+<!-- Connects JavaScript file that handles login functionality -->
 <script src="./login.js"></script>
 
+
+
 </body>
+
 </html>

@@ -1,36 +1,64 @@
 <!DOCTYPE html>
+<!-- Defines that this document uses HTML5 -->
+
 <html lang="en">
+
 <head>
+
+    <!-- Defines the character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Makes the page responsive on different screen sizes -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Text shown on the browser tab -->
     <title>TechFix Hub | Add Repair</title>
+
+    <!-- Connects the HTML file to the CSS styling file -->
     <link rel="stylesheet" href="./styles.css">
+
 </head>
+
 <body>
+
+    <!-- Header section containing website title and navigation -->
     <header>
 
+        <!-- Website logo/name -->
         <h1>📱 TechFix Hub</h1>
 
+
+        <!-- Navigation menu -->
         <nav id="navbar">
 
+            <!-- Link to the home page -->
             <a href="index.html">Home</a>
 
+            <!-- Current page link is highlighted using the active class -->
             <a href="repair.html" class="active">Add Repair</a>
 
+            <!-- Link to technician login page -->
             <a href="login.html">Technician Portal</a>
 
         </nav>
 
     </header>
 
+
+    <!-- Main content area -->
     <main>
 
+        <!-- Section containing the repair submission form -->
         <section class="form-container">
 
             <h2>Submit a Repair Request</h2>
 
+
+            <!-- Repair form used to collect customer information -->
             <form id="repairForm">
 
+
+                <!-- Customer name input -->
                 <label for="customerName">Customer Name</label>
 
                 <input
@@ -40,6 +68,8 @@
                     required
                 >
 
+
+                <!-- Customer phone number input -->
                 <label for="phoneNumber">Phone Number</label>
 
                 <input
@@ -49,10 +79,13 @@
                     required
                 >
 
+
+                <!-- Dropdown menu for selecting device type -->
                 <label for="deviceType">Device Type</label>
 
                 <select id="deviceType" required>
 
+                    <!-- Default option -->
                     <option value="">Select Device</option>
 
                     <option>Phone</option>
@@ -67,6 +100,8 @@
 
                 </select>
 
+
+                <!-- Text area for describing the repair problem -->
                 <label for="problem">Problem Description</label>
 
                 <textarea
@@ -75,6 +110,9 @@
                     placeholder="Describe the problem..."
                     required
                 ></textarea>
+
+
+                <!-- Dropdown for tracking repair progress -->
                 <label for="status">Repair Status</label>
 
                 <select id="status">
@@ -85,50 +123,71 @@
 
                 </select>
 
+
+                <!-- Payment method selection -->
                 <label for="paymentMethod">Payment Method</label>
-                
+
                 <select id="paymentMethod" required>
-                    
+
                     <option value="">Select Payment Method</option>
-                    
+
                     <option>Cash</option>
-                    
+
                     <option>M-Pesa</option>
-                    
+
                     <option>Debit Card</option>
-                    
+
                     <option>Credit Card</option>
-                    
+
                     <option>Bank Transfer</option>
-                
+
                 </select>
-                
+
+
+                <!-- M-Pesa phone number section
+                     This is shown only when M-Pesa is selected -->
                 <div id="mpesaSection">
-                    
+
                     <label for="paymentNumber">M-Pesa Phone Number</label>
-                    
-                    <input type="tel" id="paymentNumber" placeholder="e.g. 0712345678">
-                
+
+                    <input 
+                        type="tel" 
+                        id="paymentNumber" 
+                        placeholder="e.g. 0712345678"
+                    >
+
                 </div>
-                
+
+
+                <!-- Form action buttons -->
                 <div class="buttons">
 
+
+                    <!-- Submits the repair form -->
                     <button type="submit">
                         Save Repair
                     </button>
 
+
+                    <!-- Clears all entered information -->
                     <button type="reset">
                         Clear Form
                     </button>
 
+
                 </div>
+
 
             </form>
 
+
         </section>
+
 
     </main>
 
+
+    <!-- Footer section -->
     <footer>
 
         <p>
@@ -137,7 +196,11 @@
 
     </footer>
 
+
+    <!-- Connects the JavaScript file that handles form functionality -->
     <script src="./repair.js"></script>
 
+
 </body>
+
 </html>

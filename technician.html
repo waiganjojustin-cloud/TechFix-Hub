@@ -1,127 +1,227 @@
 <!DOCTYPE html>
+<!-- Defines that this document uses HTML5 -->
+
 <html lang="en">
+
 <head>
+
+    <!-- Defines the character encoding for the webpage -->
     <meta charset="UTF-8">
+
+    <!-- Makes the website responsive on different screen sizes -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title displayed on the browser tab -->
     <title>TechFix Hub | Technician Portal</title>
+
+    <!-- Connects the HTML file to the CSS stylesheet -->
     <link rel="stylesheet" href="./styles.css">
+
 </head>
+
+
 <body>
+
+
+    <!-- Header section containing website title and navigation -->
     <header>
 
+
+        <!-- Website name/logo -->
         <h1>📱 TechFix Hub</h1>
 
+
+        <!-- Navigation menu -->
         <nav id="navbar">
 
+
+            <!-- Link to home page -->
             <a href="index.html">Home</a>
 
+
+            <!-- Link to repair submission page -->
             <a href="repair.html">Add Repair</a>
 
+
+            <!-- Current page link highlighted using active class -->
             <a href="technician.html" class="active">Technician Portal</a>
+
 
         </nav>
 
+
     </header>
 
+
+
+    <!-- Main content area -->
     <main>
 
+
+        <!-- Technician dashboard section -->
         <section class="dashboard">
 
+
+            <!-- Dashboard heading -->
             <h2>Technician Portal</h2>
 
+
+            <!-- Button used to log out the technician -->
             <button id="logoutBtn">🚪 Logout</button>
 
+
+            <!-- Description of dashboard functions -->
             <p>
                 View all repair requests, update their status, or remove completed repairs.
             </p>
 
+
+
+            <!-- Dashboard cards showing repair statistics -->
             <section class="dashboard-cards">
-                
+
+
+                <!-- Card displaying total number of repairs -->
                 <div class="card">
-                    
+
                     <h3>Total Repairs</h3>
-                    
+
+                    <!-- JavaScript updates this number -->
                     <p id="totalRepairs">0</p>
-                
+
                 </div>
-                
+
+
+
+                <!-- Card displaying pending repairs -->
                 <div class="card">
-                    
+
                     <h3>Pending</h3>
-                    
+
+                    <!-- JavaScript updates pending repair count -->
                     <p id="pendingRepairs">0</p>
-                
+
                 </div>
-                
+
+
+
+                <!-- Card displaying completed repairs -->
                 <div class="card">
-                    
+
                     <h3>Completed Successfully</h3>
-                    
+
+                    <!-- JavaScript updates completed repair count -->
                     <p id="completedRepairs">0</p>
-                
+
                 </div>
-            
+
+
             </section>
-            
+
+
+
+            <!-- Search area for finding specific repairs -->
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="🔍 Search customer or device...">
-            
+
+                <!-- Technician can search by customer name or device -->
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="🔍 Search customer or device..."
+                >
+
             </div>
 
+
+
+            <!-- Button section -->
             <div class="buttons">
-                
-                <button id="refreshBtn">🔄 Refresh Repairs</button>
-            
+
+
+                <!-- Reloads repair data from local storage -->
+                <button id="refreshBtn">
+                    🔄 Refresh Repairs
+                </button>
+
+
             </div>
 
+
+
+            <!-- Container for making the table responsive -->
             <div class="table-container">
-                
+
+
+                <!-- Table displaying all repair requests -->
                 <table id="repairTable">
-                    
+
+
+                    <!-- Table headings -->
                     <thead>
-                        
+
+
                         <tr>
-                            
+
                             <th>No.</th>
-                            
+
                             <th>Customer</th>
-                            
+
                             <th>Phone</th>
-                            
+
                             <th>Device</th>
-                            
+
                             <th>Problem</th>
-                            
+
                             <th>Status</th>
-                            
+
                             <th>Payment</th>
-                            
+
                             <th>M-Pesa No.</th>
-                            
+
                             <th>Actions</th>
-                        
+
                         </tr>
-                    
+
+
                     </thead>
-                    
+
+
+
+                    <!-- JavaScript inserts repair records here -->
                     <tbody id="repairList"></tbody>
-                
+
+
                 </table>
-            
+
+
             </div>
+
+
 
         </section>
 
+
     </main>
 
+
+
+    <!-- Footer section -->
     <footer>
+
 
         <p>
             © 2026 TechFix Hub | Built with intent
         </p>
 
+
     </footer>
 
+
+
+    <!-- Connects JavaScript file that controls dashboard functions -->
     <script src="./technician.js"></script>
+
+
 </body>
+
 </html>
